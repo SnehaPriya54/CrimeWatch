@@ -1,100 +1,112 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    margin: 0;
-    padding: 0;
-    display: flex; /* Use flexbox for body */
+/* Styling for the video */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    object-fit: cover; /* Ensures the video covers the entire screen */
+    z-index: -1; /* Push the video behind the content */
+    opacity: 1.1; /* Optional: make the video slightly transparent */
+  }
+  
+  /* Styling for the login container */
+  .login-container {
+    position: relative;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    height: 100vh; /* Full viewport height */
-}
-
-.container {
-    max-width: 400px;
-    width: 100%; /* Make it responsive */
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
+    z-index: 1; /* Ensure content is above the video */
+  }
+  
+  /* Styling for the form container */
+  form {
+    background-color: rgba(255, 255, 255, 0.3); /* Make form background semi-transparent */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    z-index: 2; /* Ensure it's above the video and other content */
+    backdrop-filter: blur(5px); /* Optional: blur the background behind the form */
+  }
+  
+  h2 {
     text-align: center;
-    margin-bottom: 20px;
     color: #0056b3;
-}
-
-.input-group {
-    margin-bottom: 15px;
-}
-
-label {
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for input groups */
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-select {
+  }
+  
+  input {
     width: 95%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-
-}
-
-select{
-width:100%;
-}
-
-.noaccount{
-text-align: center;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-select:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-button {
-    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  select{
+    width:100%;
     padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 15px;
+
+  }
+  /* Styling for the button */
+  button {
+    width: 100%;
+    padding: 12px;
     border: none;
     border-radius: 4px;
     background-color: #0056b3;
     color: white;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #004494; /* Change on hover */
-}
-
-form {
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 30px;
-    width:500px;
-    justify-content: center;
-    border-radius: 4px;
-}
-input{
-    width:3px;
-}
-p {
-    color: white;
-    
-}
-
-.error {
-    color: red;
-    margin-top: 10px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #004494;
+  }
+  
+  /* Styling for the "Don't have an account?" text */
+  .noaccount {
     text-align: center;
-}
+    margin-top: 20px;
+  }
+  
+  /* Styling for the error message */
+  .error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* General styling for body */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    overflow: hidden; /* Prevent scrolling when video is full-screen */
+  }
+  
+  p {
+    color: white;
+    text-align:center;
+  }
+  

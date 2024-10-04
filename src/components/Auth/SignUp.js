@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
+import videoSrc from './globe.mp4'; 
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -35,7 +36,12 @@ const Signup = () => {
   };
 
   return (
-    <div>
+    <div className='login-container'>
+      <video autoPlay muted loop id="background-video">
+        <source src={videoSrc} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="form">
       <h2>Sign Up</h2>
       <form onSubmit={handleSignup} key={Math.random()}>
         <div>
@@ -77,7 +83,7 @@ const Signup = () => {
       <p>
         Already have an account? <a href="/login">Login here</a>
       </p>
-
+</div>
       {/* Display error message if username already exists */}
       {error && (
         <div style={{ color: 'red', marginTop: '10px' }}>
